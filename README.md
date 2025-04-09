@@ -65,6 +65,6 @@ contents_encrypted = Fernet(key).encrypt(contents) // This line encrypt the cont
 
 with open(file, "wb") as thefile: 
 
-
+13:33
 
 *Ref 1: Network Diagram*
