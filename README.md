@@ -65,6 +65,10 @@ contents_encrypted = Fernet(key).encrypt(contents) // This line encrypt the cont
 
 with open(file, "wb") as thefile: 
 
-13:33
+1600
+
+DECRYPT
+
+From the beginning of the script to print(files) is the same as the ransomware/encryption script
 
 *Ref 1: Network Diagram*
