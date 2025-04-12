@@ -1,25 +1,23 @@
 # Ransomware
-Deploying ransomware using Python
+
+Ransomware deployment using Python scripting
 
 ## Objective
 
-
-As ransomware attacks have been on a steady upward trend, I wanted to take the time to understand one of the methods of carrying out a ransomware attacks.
+As ransomware attacks have been on a steady upward trend, I wanted to take the time to understand the mechanics of one of the most popular cyberattacks methods.
 
 ### Skills Learned
 
 
-- Advanced understanding of SIEM concepts and practical application.
 - Python scripting
 - Cryptography
-- 
-
+ 
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Python
-  
+- Linux VM  
+- Fernet
 
 ## Steps
 
@@ -137,6 +135,6 @@ cat file2.txt // Now when we check our file we have the original contents of the
 
 with = resource management as = used along with to allocater where to input resources / for = loop
 
-no dropper
+NO DROPPER
 
 *Ref 1: Network Diagram*
