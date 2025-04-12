@@ -103,13 +103,37 @@ else: // If  the "if" statement is false the else statement will run.
 
 print("Wrong passphrase") // When the user inputs an incorrect password upon being prompted for the secret phrase, this output will print in the terminal.
 
+
 Lets test our scripts!
 
 ![results](https://github.com/user-attachments/assets/ef007d90-74cf-40ae-b97d-67d0827bd6ac)
 
- cat file2.txt // this will display the contents of a the files.
+cat file2.txt // This will display the contents of a the files.
+
+cat thekey.key // Here I am showing the 128bit encryption key, this file is appended from the file list that becomes encrypted in our MALWARE.py script, 
+if our encryption key got encrypted, it would be a messy situation.
+
+python3 MALWARE.py // We have now executed our Python script in the directory. 
+
+You now see a list of the files encrypted and our message we left for the user on who to contact to decrypt the files, for a price.
+
+cat file2.txt // As you can see, the data in file is now encrypted.
+
+python3 DECRYPT.py // Now that the files have been encrypted lets decrypt them with our decryption script.
+
+The script prompts us for the secret phrase which was set in the DECRYPT.py script.
+
+We then get a message thanking us for our business, and that the files have been decrypted.
+
+cat file2.txt // Now when we check our file we have the original contents of the file because our data has been decrypted.
+
+
+
+
  
-cat thekey.key // This is our 128bit encryption key
+
+
+
 
 with = resource management as = used along with to allocater where to input resources / for = loop
 
