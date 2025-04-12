@@ -27,7 +27,7 @@ Next we will create a directory with several files that we are going to test our
 
 So we insert into the CLI "mkdir ransomware" to create the directory and inside the directory, run "echo "file content" > filename.txt" a few times to create several files.
 
-Next we will create the Python script file.
+      Next we will create the Python script file.
 
 ![Encryption](https://github.com/user-attachments/assets/edf5a8c4-e0b2-4010-b4cf-8c5a9ea1bffd)
 
