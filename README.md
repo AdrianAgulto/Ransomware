@@ -27,7 +27,7 @@ Next we will create a directory with several files that we are going to test our
 
 So we insert into the CLI "mkdir ransomware" to create the directory and inside the directory, run "echo "file content" > filename.txt" a few times to create several files.
 
-      Next we will create the Python script file.
+Next we will create the Python script file.
 
 ![Encryption](https://github.com/user-attachments/assets/edf5a8c4-e0b2-4010-b4cf-8c5a9ea1bffd)
 
@@ -47,7 +47,11 @@ for file in os.listdir() // This is a for loop and will list all the files in th
 
 if os.path.isfile(file) // if object is a file add to encryption list
 
-if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py" : (next line)continue(next line) files.append(file) // This is seperating our script files that are in the same directory from the file list we created earlier in the script.
+if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": //
+
+continue // this tells the script to continue to the next if statement and skip the current iteration.
+
+files.append(file) // This is seperating our python script files and key that are in the same directory from the file list we created earlier in the script.
 
 print(files) // Will display the "files" list in the terminal.
 
