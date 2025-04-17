@@ -26,9 +26,9 @@ First we are going to spin up an Ubuntu VM
 
 Next we will create a directory with several files that we are going to test our ransomware on.
 
-So we insert into the CLI "mkdir ransomware101" to create a directory. 
+We will insert into the CLI "mkdir ransomware101" to create a directory. 
 
-In the directory we will run "echo "file content" > filename.txt" //  We will run this serveral times to create files: file.txt, file2.txt, file3.txt.
+In the directory we will run "echo "file content" > filename.txt" //  We will run this serveral times to create files: file.txt, file2.txt, and file3.txt.
 
 Next we will create the malware script.
 
